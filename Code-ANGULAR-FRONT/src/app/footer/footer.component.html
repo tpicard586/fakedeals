@@ -1,0 +1,52 @@
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <h3>Mega<span>deals</span></h3>
+
+        <p class="footer-company-name">Sogeti © 2020</p>
+
+        <div class="footer-icons">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p>Contact Us</p>
+        <br>
+        <div>
+            <input type="checkbox" id="private" name="private" [(ngModel)]="private" (click)="switch()">
+            <label for="private" style="color: white;">Private</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="company" name="company" [(ngModel)]="company" (click)="switch()">
+            <label for="company" style="color: white;">Company</label>
+        </div>
+        <br>
+        <form [formGroup]="privateForm" (ngSubmit)="sendContact('private')" *ngIf="private">
+            <input type="email" name="email" placeholder="Email" formControlName="email">
+            <textarea name="message" placeholder="Message" formControlName="content" required></textarea>
+            <input type="text" name="phone" placeholder="Phone number" formControlName="phone" required>
+            <button mat-raised-button type="submit">Send</button>
+        </form>
+
+        <form [formGroup]="companyForm" (ngSubmit)="sendContact('company')" *ngIf="company">
+            <input type="email" name="email" placeholder="Email" formControlName="email" required>
+            <textarea name="message" placeholder="Message" formControlName="content" required></textarea>
+            <input type="text" name="name" placeholder="Company name" formControlName="name" required>
+            <input type="text" name="siret" placeholder="Siret number" formControlName="siret" required>
+            <input type="text" name="phone" placeholder="Phone number" formControlName="phone" required>
+            <button mat-raised-button type="submit">Send</button>
+        </form>
+
+    </div>
+
+</footer>

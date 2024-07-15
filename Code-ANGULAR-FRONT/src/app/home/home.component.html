@@ -1,0 +1,19 @@
+<div class="grid-container">
+  <h1 class="mat-h1">HOTEST DEALS 🔥</h1>
+  <button mat-raised-button (click)="openPendingDeal()">SEE YOUR PENDING DEALS</button>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards" colspan=1 rowspan=1>
+      <mat-card class="dashboard-card card-image" [style.background-image]="getImage(card.name)">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.description}}
+            <br>
+            <a target="_blank" [href]="card.link"><small>Go</small></a>
+          </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<app-upload-files></app-upload-files>

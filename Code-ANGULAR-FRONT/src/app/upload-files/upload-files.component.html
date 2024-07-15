@@ -1,0 +1,49 @@
+<!-- <mat-card class="uploadFile" style="margin: 3em; background-color: gainsboro;">
+    <mat-card-header>
+        <h2>Post a deal</h2>
+    </mat-card-header>
+    <hr>
+    <mat-card-content>
+        <form [formGroup]="uploadForm" (ngSubmit)="upload()">
+            <div>
+                <label>
+                    <h4>Image (in jpg) *</h4>
+                </label>
+                <input type="file" (change)="selectFile($event)" formControlName="file" required />
+            </div>
+            <div>
+                <br>
+                <label>
+                    <h4>Description *</h4>
+                </label>
+                <input type="text" formControlName="description" required style="width: 20%;" />
+            </div>
+            <div>
+                <label>
+                    <h4>Lien *</h4>
+                </label>
+                <input type="text" formControlName="link" required style="width: 20%;" />
+            </div>
+            <button mat-raised-button type="submit">GO</button>
+        </form>
+    </mat-card-content>
+
+</mat-card> -->
+
+
+<div class="wrapper">
+    <header>
+        <h1>Post a deal</h1>
+    </header>
+
+    <form class="sections" [formGroup]="uploadForm" (ngSubmit)="upload()">
+        <section class="active">
+            <input type="text" placeholder="Description *" id="description" formControlName="description" required />
+            <input type="text" placeholder="Link *" id="link" formControlName="link" required />
+        </section>
+        <input type="file" (change)="selectFile($event)" formControlName="file" required />
+        <div style="display: flex; justify-content: flex-end; margin-top: 25px;">
+            <button mat-raised-button type="submit">SEND</button>
+        </div>
+    </form>
+</div>
